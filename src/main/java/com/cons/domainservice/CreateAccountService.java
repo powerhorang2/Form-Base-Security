@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import com.cons.domain.Account;
+import com.cons.entity.Account;
 
 @Component
 public class CreateAccountService {
