@@ -15,15 +15,29 @@ import lombok.extern.slf4j.Slf4j;
 public class SomeAuthorizedController {
     private final SomeAuthorizedService someAuthorizedService;
     
+     @GetMapping("/admin")
+    public String admin(){
+        log.info("in the admin");
+        return "ok";
+    }
+   
+     @GetMapping("/admin/admin-service")
+     public String adminPathAdminService() {
+    	 log.info("in the admin admin");
+    	 someAuthorizedService.adminCanAccess();
+    	 return "ok";
+     }
+     
     @GetMapping("/general")
     public String general(){
         log.info("in the general");
         return "ok";
     }
-
-    @GetMapping("/admin")
-    public String admin(){
-        log.info("in the admin");
+    
+    @GetMapping("/general/general-service")
+    public String generalPathGeneralService(){
+        log.info("in the general general");
+        someAuthorizedService.generalCanAccess();
         return "ok";
     }
     
